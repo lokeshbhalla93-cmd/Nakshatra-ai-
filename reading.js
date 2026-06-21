@@ -22,10 +22,10 @@ export default async function handler(req, res) {
     );
     const raw = await response.text();
     let data;
-    try { data = JSON.parse(raw); } catch(e) { return res.status(500).json({ error: 'Gemini parse error: ' + raw.slice(0,200) }); }
+    try { data = JSON.parse(raw); } catch(e) { return res.status(500).json({ error: 'Parse error: ' + raw.slice(0,200) }); }
     if (!response.ok) return res.status(response.status).json({ error: data?.error?.message || 'Gemini error' });
     const text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
-    if (!text) return res.status(500).json({ error: 'Empty response: ' + JSON.stringify(data).slice(0,200) });
+    if (!text) return res.status(500).json({ error: 'Empty: ' + JSON.stringify(data).slice(0,300) });
     return res.status(200).json({ text });
   } catch (err) {
     return res.status(500).json({ error: err.message || 'Server error.' });
