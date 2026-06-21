@@ -221,7 +221,7 @@ function fmt(t) {
 }
 
 async function callAPI(prompt) {
-  const res = await fetch('/api/reading', {
+  const res = await fetch('/reading.js', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ prompt })
