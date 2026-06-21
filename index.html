@@ -294,7 +294,7 @@ Detailed Vimshottari Dasha analysis (220-280 words):
 Use **bold** for planet names and periods, *italics* for insights. Be date-accurate.`;
 
   try {
-    const readingText = await call(reading.jsPrompt);
+    const readingText = await callapi(reading.Prompt);
 
     document.getElementById('responsePlanet').textContent = planetEmojis[selectedType] || '🌙';
     document.getElementById('responseMeta').textContent = `${name} · ${dob}${pob ? ' · '+pob : ''} · ${selectedLang}`;
