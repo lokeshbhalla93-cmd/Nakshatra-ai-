@@ -1,13 +1,6 @@
-{
-  "name": "nakshatra-ai",
-  "version": "1.0.0",
-  "description": "AI-powered Vedic Astrology app",
-  "private": true,
-  "scripts": {
-    "start": "node index.js",
-    "dev": "vite", 
-    "build": "vite build"
-  },
-  "dependencies": {},
-  "devDependencies": {}
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start"
 }
+``
